@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Typography, Paper } from '@mui/material/';
+import AppBar from '@mui/material/AppBar';
+import Image from './piv1.jpg'
+
+
+const styles = {
+  paperContainer: {
+      backgroundImage: `url(${Image})`
+  }
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Box>
+      <AppBar>
+        <Typography variant='h3' backgroundColor="red">Logo</Typography>
+      </AppBar>
+    </Box>
+    
+    <Paper style={styles.paperContainer}>
+    Some text to fill the Paper Component
+    </Paper>
+      <Typography>Check out our database today</Typography>
+  
+    </>
   );
 }
 
