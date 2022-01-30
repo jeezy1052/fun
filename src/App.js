@@ -1,29 +1,19 @@
-import { Box, Typography, Paper } from '@mui/material/';
-import AppBar from '@mui/material/AppBar';
-import Image from './piv1.jpg'
-
-
-const styles = {
-  paperContainer: {
-      backgroundImage: `url(${Image})`
-  }
-};
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar.js'
+import Home from './pages/Home.js'
+import Reviews from './pages/Reviews.js'
+import Database from './pages/Database.js'
 
 function App() {
   return (
-    <>
-    <Box>
-      <AppBar>
-        <Typography variant='h3' backgroundColor="red">Logo</Typography>
-      </AppBar>
-    </Box>
-    
-    <Paper style={styles.paperContainer}>
-    Some text to fill the Paper Component
-    </Paper>
-      <Typography>Check out our database today</Typography>
-  
-    </>
+    <Router>
+    <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/review" element={<Reviews />} />
+        <Route path="database" element={<Database />} />
+      </Routes>
+    </Router>
   );
 }
 
